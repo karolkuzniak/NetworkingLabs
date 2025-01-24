@@ -1,0 +1,137 @@
+Router#show run
+Building configuration...
+
+
+Current configuration : 1713 bytes
+!
+! Last configuration change at 11:50:42 UTC Thu Mar 7 2024
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+!
+hostname Router
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition Mgmt-intf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+ --More--
+*Mar  7 11:50:42.694: %SYS-5-CONFIG_I: Configured from console !        e
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+multilink bundle-name authenticated
+!
+!
+!
+!
+license udi pid ISR4321/K9 sn FDO213329WE
+!
+spanning-tree extend system-id
+!
+username R1 password 0 cisco123
+username R3 password 0 cisco123
+!
+redundancy
+ mode none
+!
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/0/1
+ ip address 209.165.200.225 255.255.255.252
+ negotiation auto
+!
+interface Serial0/1/0
+ ip address 10.1.1.2 255.255.255.252
+ encapsulation ppp
+ ppp authentication pap
+ ppp pap sent-username R2 password 0 cisco123
+!
+interface Serial0/1/1
+ ip address 10.2.2.1 255.255.255.252
+ encapsulation ppp
+ ppp authentication chap
+ clock rate 64000
+!
+interface GigabitEthernet0
+ vrf forwarding Mgmt-intf
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ network 10.1.1.0 0.0.0.3 area 0
+ network 10.2.2.0 0.0.0.3 area 0
+ network 209.165.200.224 0.0.0.3 area 0
+ default-information originate
+!
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+ip tftp source-interface GigabitEthernet0
+ip route 0.0.0.0 0.0.0.0 Serial0/1/0
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ stopbits 1
+line aux 0
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
