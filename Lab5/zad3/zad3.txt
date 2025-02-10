@@ -1,0 +1,7 @@
+5. Odłączenie S_K do PC_L2 i przywrócenie połączenia zajmie do 2 minut
+
+6. Odłączenie S_K port f0/15 do S_M port f0/15  i przywrócenie połączenia zajmie do 3 minut
+
+9. Odłączenie S_K do PC_L2 i przywrócenie połączenia zajmie do 30 sekung 
+
+10. Odłączenie S_K port f0/15 do S_M port f0/15  i przywrócenie połączenia zajmie do 3 minut

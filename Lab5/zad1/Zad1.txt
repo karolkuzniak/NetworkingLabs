@@ -1,0 +1,86 @@
+Zadanie 1:
+
+5. Przełącznik    Bridge ID priority    Koszt portu
+--------------------------------------------------
+S_K            32769                19
+S_L            32769                19
+S_M            32769                19
+
+
+7. S_K:
+Priorytet głównego mostu (Root ID): 32769
+Adres głównego mostu (Root Address): 0002.4AC8.C1E5
+Wszystkie porty są w stanie "forwarding" (FWD), co oznacza, że przekazują ruch sieciowy.
+
+Przełącznik S_L:
+Priorytet głównego mostu (Root ID): 32769
+Adres głównego mostu (Root Address): 0002.4AC8.C1E5
+Port Fa0/3 został wybrany jako port korzenia (Root), co oznacza, że ten port prowadzi bezpośrednio do głównego mostu.
+Port Fa0/5 został zablokowany (BLK), co oznacza, że ten port został wyłączony, aby zapobiec pętlom w sieci.
+Pozostałe porty są w stanie "forwarding" (FWD), co oznacza, że przekazują ruch sieciowy.
+
+Przełącznik S_M:
+Priorytet głównego mostu (Root ID): 32769
+Adres głównego mostu (Root Address): 0002.4AC8.C1E5
+Port Fa0/13 został wybrany jako port korzenia (Root), co oznacza, że ten port prowadzi bezpośrednio do głównego mostu.
+Porty Fa0/15, Fa0/7 i Fa0/9 zostały zablokowane (BLK), co oznacza, że zostały wyłączone, aby zapobiec pętlom w sieci.
+Pozostałe porty (Fa0/2, Fa0/1) są w stanie "forwarding" (FWD), co oznacza, że przekazują ruch sieciowy.
+
+
+10. Przełącznik S_K:
+Adres MAC: 0002.4AC8.C1E
+Porty prowadzące do głównego przełącznika (S_K zostaje wybrany jako główny, więc wszystkie porty na nim będą w stanie "forwarding"): wszystkie porty
+
+Przełącznik S_L:
+Adres MAC: 000A.F39A.67B0
+Porty prowadzące do głównego przełącznika (S_K): 1, 2, 4, 5, 6
+Porty, które zostaną zablokowane: brak
+
+
+Przełącznik S_M:
+Adres MAC: 00E0.B08D.9A5E
+Porty prowadzące do głównego przełącznika (S_K): 1, 2, 4, 5, 6
+Porty, które zostaną zablokowane: brak
+ 
+
+14. Przełącznik S_L:
+Port Fa0/5 jest zablokowany (Altn BLK).
+
+Przełącznik S_M:
+Porty Fa0/9 i Fa0/7 są zablokowane (Altn BLK).
+
+Przełącznik S_K:
+Brak zablokowanych portów, ponieważ jest on głównym mostem.
+
+
+18. Przełącznik S_K:
+Porty Fa0/1, Fa0/2, Fa0/3, Fa0/5, Fa0/13 oraz Fa0/15 są to porty kierujące ruchem.
+Port Gi0/1 jest w stanie "Desg FWD", co oznacza, że jest to port kierujący ruchem.
+
+Przełącznik S_L:
+Porty Fa0/1, Fa0/9, Fa0/13 oraz Fa0/2 są w stanie "Desg FWD", co oznacza, że są to porty kierujące ruchem.
+Port Fa0/3 jest zablokowany
+Port Fa0/5 jest zablokowany
+Port Gi0/1 jest w stanie "Root FWD" (Root Forwarding)
+
+Przełącznik S_M:
+Porty Fa0/1, Fa0/2 oraz Fa0/13 są w stanie "Desg FWD", co oznacza, że są to porty kierujące ruchem.
+Port Fa0/7 jest zablokowany
+Port Fa0/9 jest zablokowany
+Port Fa0/15 jest zablokowany
+
+
+20. Przełącznik S_K:
+Porty Fa0/1, Fa0/2, Fa0/3, Fa0/5, Fa0/13 oraz Fa0/15 są w stanie "Desg FWD" (Designated Forwarding), co oznacza, że są to porty kierujące ruchem.
+Port Fa0/7 jest w stanie "Desg FWD", co oznacza, że są to porty kierujące ruchem.
+
+Przełącznik S_L:
+Porty Fa0/1, Fa0/2, Fa0/9, Fa0/13 oraz Gi0/1 są w stanie "Desg FWD", co oznacza, że są to porty kierujące ruchem.
+Port Fa0/3 jest zablokowany
+Port Fa0/5 jest zablokowany
+
+Przełącznik S_M:
+Porty Fa0/1, Fa0/2 oraz Fa0/13 są w stanie "Desg FWD", co oznacza, że są to porty kierujące ruchem.
+Port Fa0/7 jest zablokowany
+Port Fa0/9 jest zablokowany
+Port Fa0/15 jest zablokowany

@@ -1,0 +1,5 @@
+5.
+
+Dla S_K zmniejszy się o 2048 
+Dla S_L zmniejszy się o 9
+Dla S_M zmniejszy się o 20
